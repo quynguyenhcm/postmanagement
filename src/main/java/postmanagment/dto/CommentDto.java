@@ -1,9 +1,6 @@
 package postmanagment.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import postmanagment.model.Post;
-
-import javax.persistence.*;
 
 public class CommentDto {
 
