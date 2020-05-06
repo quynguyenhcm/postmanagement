@@ -15,6 +15,7 @@ public class PostService {
 
     @Autowired
     private PostRepository postRespository;
+    
     @Autowired
     private ModelMapper modelMapper;
 
@@ -31,7 +32,6 @@ public class PostService {
     }
 
     private PostDto convertToDto(Post post) {
-        PostDto postDto = modelMapper.map(post, PostDto.class);
-        return postDto;
+        return modelMapper.map(post, PostDto.class);
     }
 }

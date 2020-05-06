@@ -20,21 +20,15 @@ public class CommentService {
     private ModelMapper modelMapper;
 
     public Iterable<CommentDto> findByPostId(Long postId){
-        return commentRepository.findByPostId(postId).stream().map(
-                comment -> convertToDto(comment)
-        ).
-        collect(Collectors.toList());
+        return commentRepository.findByPostId(postId).stream().map(comment -> convertToDto(comment))
+                .collect(Collectors.toList());
     }
 
     public Optional<CommentDto> findByIdAndPostId(Long id, Long postId){
-        Optional<CommentDto> commentDto = Optional.of(
-                convertToDto(commentRepository.findByIdAndPostId(id, postId).orElse(null)));
-        return commentDto;
+        return Optional.of(convertToDto(commentRepository.findByIdAndPostId(id, postId).orElse(null)));
     }
 
-
     private CommentDto convertToDto(Comment comment) {
-        CommentDto commentDto = modelMapper.map(comment, CommentDto.class);
-        return commentDto;
+        return modelMapper.map(comment, CommentDto.class);
     }
 }
