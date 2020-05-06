@@ -8,7 +8,6 @@ H2 in-memory database
 2. Application structure
 - Controller: Controllers and REST API to get the posts and comments
 - Service: services and business logic to access application data
-- Dto: Make sure the application does not expose database entity structure to the world
 - Repository: data access repositories
 - Model: entity models
 - Test: simple unit tests for the repositories
